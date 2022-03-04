@@ -8,53 +8,69 @@ const inputCSS =
 export class Experience extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      show: false,
+    };
   }
 
+  toggleShow = () => {
+    this.setState((prevState) => ({
+      show: !prevState.show,
+    }));
+    console.log("! Toggled Experience.");
+  };
+
   render() {
-    if (this.props.active == "true") {
+    const { show } = this.state;
+    if (show) {
       return (
-        <div className="bg-indigo-400 border border-t-2 border-slate-300 shadow-md p-5 h-full w-full">
-          <h1 className="text-4xl mb-5">Job Experiences</h1>
-          <form className="flex flex-col ">
-            <input
-              type="text"
-              id="name"
-              className={inputCSS}
-              placeholder="company name"
-            />
-            <input
-              type="email"
-              id="email"
-              className={inputCSS}
-              placeholder="position title"
-            />
-            <input
-              type="number"
-              id="email"
-              className={inputCSS}
-              placeholder="main tasks"
-            />
-            <input
-              type="number"
-              id="email"
-              className={inputCSS}
-              placeholder="start date"
-            />
-            <input
-              type="number"
-              id="email"
-              className={inputCSS}
-              placeholder="end date"
-            />
-            <Button title="Remove Education" onClick={this.props.handleClick} />
-          </form>
+        <div className="mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
+          <div className="bg-stone-100 border border-t-2 border-slate-300 shadow-md p-5">
+            <h1 className="text-4xl mb-5">Job Experiences</h1>
+            <form className="flex flex-col ">
+              <input
+                type="text"
+                id="name"
+                className={inputCSS}
+                placeholder="company name"
+              />
+              <input
+                type="email"
+                id="email"
+                className={inputCSS}
+                placeholder="position title"
+              />
+              <input
+                type="number"
+                id="email"
+                className={inputCSS}
+                placeholder="main tasks"
+              />
+              <input
+                type="number"
+                id="email"
+                className={inputCSS}
+                placeholder="start date"
+              />
+              <input
+                type="number"
+                id="email"
+                className={inputCSS}
+                placeholder="end date"
+              />
+              <Button title="Remove Education" onClick={this.toggleShow} />
+            </form>
+          </div>
         </div>
       );
     } else
       return (
-        <div className="bg-indigo-400 border border-t-2 border-slate-300 shadow-md p-5 h-full w-full ">
-          <h1 className="text-4xl ">Job Experiences</h1>
-          <Button title="Add Education" onClick={this.props.handleClick} />
+        <div className="mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
+          <div className="bg-stone-100  p-5">
+            <h1 className="text-4xl ">Job Experiences</h1>
+            <Button title="Add Education" onClick={this.toggleShow} />
+          </div>
         </div>
       );
   }

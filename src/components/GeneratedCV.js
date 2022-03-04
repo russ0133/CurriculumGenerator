@@ -11,6 +11,9 @@ export class GeneratedCV extends Component {
         <div>Name: {this.props.name}</div>
         <div>Email: {this.props.email}</div>
         <div>Phone: {this.props.phone}</div>
+        <div>School Name: {this.props.schoolName}</div>
+        <div>Education Title: {this.props.schoolTitle}</div>
+        <div>Education Date: {this.props.schoolDate}</div>
       </div>
     );
   }

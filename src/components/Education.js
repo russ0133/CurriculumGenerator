@@ -8,41 +8,63 @@ const inputCSS =
 export class Education extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      show: false,
+    };
   }
 
+  toggleShow = () => {
+    this.setState((prevState) => ({
+      show: !prevState.show,
+    }));
+    console.log("! d showEducation.");
+  };
+
   render() {
-    if (this.props.active == "true") {
+    const { show } = this.state;
+    if (show) {
       return (
-        <div className="bg-indigo-400 shadow-md p-5 h-full w-full ">
-          <h1 className="text-4xl mb-5">Educational Record</h1>
-          <form className="flex flex-col ">
-            <input
-              type="text"
-              id="name"
-              className={inputCSS}
-              placeholder="school name"
-            />
-            <input
-              type="email"
-              id="email"
-              className={inputCSS}
-              placeholder="title of study"
-            />
-            <input
-              type="number"
-              id="email"
-              className={inputCSS}
-              placeholder="date of study"
-            />
-            <Button title="Remove Education" onClick={this.props.handleClick} />
-          </form>
+        <div className="mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
+          <div className="bg-stone-100 shadow-md p-5">
+            <h1 className="text-4xl mb-5">Educational Record</h1>
+            <form className="flex flex-col ">
+              <input
+                type="text"
+                id="schoolName"
+                className={inputCSS}
+                placeholder="school name"
+                value={this.props.schoolName}
+                onChange={this.props.handleInputChange}
+              />
+              <input
+                type="email"
+                id="schoolTitle"
+                className={inputCSS}
+                placeholder="title of study"
+                value={this.props.schoolTitle}
+                onChange={this.props.handleInputChange}
+              />
+              <input
+                type="number"
+                id="schoolDate"
+                className={inputCSS}
+                placeholder="date of study"
+                value={this.props.schoolDate}
+                onChange={this.props.handleInputChange}
+              />
+              <Button title="Add Education" onClick={this.toggleShow} />
+            </form>
+          </div>
         </div>
       );
     } else
       return (
-        <div className="bg-indigo-400 shadow-md p-5 h-full w-full ">
-          <h1 className="text-4xl ">Educational Record</h1>
-          <Button title="Add Education" onClick={this.props.handleClick} />
+        <div className="mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
+          <div className="bg-stone-100 shadow-md p-5">
+            <h1 className="text-4xl ">Educational Record</h1>
+            <Button title="Add Education" onClick={this.toggleShow} />
+          </div>
         </div>
       );
   }

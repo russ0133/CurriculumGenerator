@@ -10,34 +10,36 @@ export class PersonalInfo extends Component {
   }
   render() {
     return (
-      <div className="bg-indigo-500 shadow-md rounded-t-lg p-5 w-screen md:w-1/2">
-        <h1 className="text-4xl mb-5">Personal Information</h1>
-        <form className="flex flex-col ">
-          <input
-            type="text"
-            id="fullName"
-            className={inputCSS}
-            placeholder="full names"
-            value={this.props.fullName}
-            onChange={this.props.handleInputChange}
-          />
-          <input
-            type="email"
-            id="email"
-            className={inputCSS}
-            placeholder="email"
-            value={this.props.email}
-            onChange={this.props.handleInputChange}
-          />
-          <input
-            type="number"
-            id="phone"
-            className={inputCSS}
-            placeholder="phone number"
-            value={this.props.phone}
-            onChange={this.props.handleInputChange}
-          />
-        </form>
+      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
+        <div className="rounded-sm p-5 bg-stone-100">
+          <h1 className="text-4xl mb-5">Personal Information</h1>
+          <form className="flex flex-col ">
+            <input
+              type="text"
+              id="fullName"
+              className={inputCSS}
+              placeholder="full names"
+              value={this.props.fullName}
+              onChange={this.props.handleInputChange}
+            />
+            <input
+              type="email"
+              id="email"
+              className={inputCSS}
+              placeholder="email"
+              value={this.props.email}
+              onChange={this.props.handleInputChange}
+            />
+            <input
+              type="number"
+              id="email"
+              className={inputCSS}
+              placeholder="phone number"
+              value={this.props.phone}
+              onChange={this.props.handleInputChange}
+            />
+          </form>
+        </div>
       </div>
     );
   }
