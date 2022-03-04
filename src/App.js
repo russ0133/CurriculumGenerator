@@ -39,9 +39,9 @@ class App extends Component {
       this.state;
     return (
       <div className="bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 text-stone-600">
-        <Header />
+        <Header className="" />
 
-        <div className="flex flex-col justify-start items-center mt-6">
+        <div className="flex flex-col justify-start items-center mt-6 font-custom1">
           <PersonalInfo
             handleInputChange={this.handleInputChange}
             fullName={fullName}

@@ -10,7 +10,7 @@ export class PersonalInfo extends Component {
   }
   render() {
     return (
-      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
+      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm2 rounded-lg w-screen md:w-1/2">
         <div className="rounded-sm p-5 bg-stone-100">
           <h1 className="text-4xl mb-5">Personal Information</h1>
           <form className="flex flex-col ">
