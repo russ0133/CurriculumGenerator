@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
+import uniqid from "uniqid";
 
 // Components
 import Header from "./components/Header";
@@ -7,6 +8,7 @@ import PersonalInfo from "./components/PersonalInfo";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import GeneratedCV from "./components/GeneratedCV";
+import { FaUniversity } from "react-icons/fa";
 
 class App extends Component {
   constructor(props) {
@@ -16,24 +18,47 @@ class App extends Component {
       fullName: "",
       email: "",
       phone: "",
-      schoolName: "",
-      schoolTitle: "",
-      schoolDate: "",
+
+      education: {
+        schoolName: "1",
+        schoolTitle: "2",
+        schoolDate: "3",
+      },
+      educations: [],
     };
   }
 
-  addEducation = () => ({
-    // test
-  });
+  addToEducation = (e) => {
+    e.preventDefault();
+    this.setState({
+      educations: this.state.educations.concat(this.state.education),
+    });
+  };
 
   handleInputChange = (event) => {
     const target = event.target;
+
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.id;
+    const context = target.getAttribute("context");
 
-    this.setState({ [name]: value });
+    if (context == null) return console.error("! Theres no context specified.");
+
+    let updatedState = this.state[context];
+    updatedState[name] = value;
+
+    this.setState({ [context]: updatedState });
   };
-
+  onSubmitTask = (e) => {
+    e.preventDefault();
+    this.setState({
+      tasks: this.state.tasks.concat(this.state.task),
+      task: {
+        text: "",
+        id: uniqid(),
+      },
+    });
+  };
   render() {
     const { email, fullName, phone, schoolName, schoolTitle, schoolDate } =
       this.state;
@@ -60,8 +85,8 @@ class App extends Component {
 
           <Experience />
 
-          <div className="h-max mt-12 w-full bg-stone-600 text-center align-center text-2xl shadow-lg">
-            Your Generated CV
+          <div className="flex text-gray-100 flex-row bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 justify-between p-2 w-full mt-12 font-custom2">
+            YOUR GENERATED CV
           </div>
 
           <GeneratedCV

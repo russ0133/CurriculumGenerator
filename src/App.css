@@ -7,10 +7,11 @@
   src: url("./fonts/Roboto-Light.ttf");
 }
 
-input:focus {
-  outline: none !important;
-}
 @font-face {
   font-family: "Custom-2";
   src: url("./fonts/Roboto-Black.ttf");
+}
+
+input:focus {
+  outline: none !important;
 }

@@ -1,6 +1,7 @@
 import "../App.css";
 import React, { Component } from "react";
 import Button from "./ui/Button";
+import { FaBriefcase } from "react-icons/fa";
 
 const inputCSS =
   "bg-gray-50  mb-1 border border-slate-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
@@ -15,6 +16,7 @@ export class Experience extends Component {
   }
 
   toggleShow = () => {
+    console.log(this);
     this.setState((prevState) => ({
       show: !prevState.show,
     }));
@@ -27,7 +29,10 @@ export class Experience extends Component {
       return (
         <div className="mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
           <div className="bg-stone-100 border border-t-2 border-slate-300 shadow-md p-5">
-            <h1 className="text-4xl mb-5">Job Experiences</h1>
+            <h1 className="flex flex-row text-4xl mb-5 ">
+              Job Experience
+              <FaBriefcase className="ml-auto opacity-75" />
+            </h1>
             <form className="flex flex-col ">
               <input
                 type="text"
@@ -68,7 +73,10 @@ export class Experience extends Component {
       return (
         <div className="mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
           <div className="bg-stone-100  p-5">
-            <h1 className="text-4xl ">Job Experiences</h1>
+            <h1 className="flex flex-row text-4xl mb-5 ">
+              Job Experience
+              <FaBriefcase className="ml-auto opacity-75" />
+            </h1>
             <Button title="Add Education" onClick={this.toggleShow} />
           </div>
         </div>
