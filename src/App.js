@@ -8,7 +8,8 @@ import PersonalInfo from "./components/PersonalInfo";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import GeneratedCV from "./components/GeneratedCV";
-import { FaUniversity } from "react-icons/fa";
+
+// TODO: Implement proper education list.
 
 class App extends Component {
   constructor(props) {
@@ -23,17 +24,37 @@ class App extends Component {
         schoolName: "1",
         schoolTitle: "2",
         schoolDate: "3",
+        id: uniqid(),
       },
       educations: [],
     };
   }
 
+  // Education Component Functions
   addToEducation = (e) => {
     e.preventDefault();
     this.setState({
       educations: this.state.educations.concat(this.state.education),
+      education: {
+        schoolName: "",
+        schoolTitle: "",
+        schoolDate: "",
+        id: uniqid(),
+      },
+    });
+    console.log("hey");
+  };
+
+  deleteEducation = (targetid) => {
+    let found = this.state.educations.find(
+      (education) => education.id === targetid
+    );
+    console.log(`Deleted education ${found.schoolName} / ${found.schoolTitle}`);
+    this.setState({
+      educations: this.state.educations.filter((param) => param !== found),
     });
   };
+  //
 
   handleInputChange = (event) => {
     const target = event.target;
@@ -74,13 +95,15 @@ class App extends Component {
             phone={phone}
             className="w-screen"
           />
-
           <Education
             handleInputChange={this.handleInputChange}
+            addEducation={this.addToEducation}
+            deleteEducation={this.deleteEducation}
             schoolName={schoolName}
             schoolTitle={schoolTitle}
             schoolDate={schoolDate}
             className="w-screen h-64"
+            educations={this.state.educations}
           />
 
           <Experience />

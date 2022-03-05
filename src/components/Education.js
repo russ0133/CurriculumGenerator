@@ -2,6 +2,7 @@ import "../App.css";
 import React, { Component } from "react";
 import Button from "./ui/Button";
 import { FaUniversity } from "react-icons/fa";
+import EducationList from "./EducationList";
 
 const inputCSS =
   "bg-gray-50  mb-1 border border-slate-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
@@ -28,6 +29,11 @@ export class Education extends Component {
       return (
         <div className="mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-1 shadow-sm rounded-lg w-screen md:w-1/2">
           <div className="bg-stone-100 shadow-md p-5">
+            <EducationList
+              educations={this.props.educations}
+              deleteEducation={this.props.deleteEducation}
+            />
+
             <h1 className="flex flex-row text-4xl mb-5 ">
               Educational Record
               <FaUniversity className="ml-auto opacity-75" />
@@ -66,7 +72,10 @@ export class Education extends Component {
                   onClick={this.toggleShow}
                   type="secondary"
                 />
-                <Button title="Add Education" onClick={this.toggleShow} />
+                <Button
+                  title="Add Education"
+                  onClick={this.props.addEducation}
+                />
               </div>
             </form>
           </div>
