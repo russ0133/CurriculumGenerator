@@ -12,7 +12,7 @@ export class Education extends Component {
     super(props);
 
     this.state = {
-      show: true,
+      show: false,
     };
   }
 
@@ -38,7 +38,7 @@ export class Education extends Component {
               Educational Record
               <FaUniversity className="ml-auto opacity-75" />
             </h1>
-            <form className="flex flex-col ">
+            <form className="flex flex-col " onSubmit={this.props.addEducation}>
               <input
                 type="text"
                 id="schoolName"
@@ -72,10 +72,12 @@ export class Education extends Component {
                   onClick={this.toggleShow}
                   type="secondary"
                 />
-                <Button
-                  title="Add Education"
-                  onClick={this.props.addEducation}
-                />
+                <button
+                  type="submit"
+                  className="flex flex-col items-center justify-center self-center  bg-purple-500 text-stone-100 cursor-pointer rounded-lg w-max mt-5 px-5 py-1 text-sm font-robmedium"
+                >
+                  Add Education
+                </button>
               </div>
             </form>
           </div>

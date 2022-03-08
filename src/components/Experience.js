@@ -2,6 +2,7 @@ import "../App.css";
 import React, { Component } from "react";
 import Button from "./ui/Button";
 import { FaBriefcase } from "react-icons/fa";
+import ExperienceList from "./ExperienceList.js";
 
 const inputCSS =
   "bg-gray-50  mb-1 border border-slate-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
@@ -33,38 +34,69 @@ export class Experience extends Component {
               Job Experience
               <FaBriefcase className="ml-auto opacity-75" />
             </h1>
-            <form className="flex flex-col ">
+            <ExperienceList
+              jobs={this.props.jobs}
+              deleteJob={this.props.deleteJob}
+            />
+            <form className="flex flex-col " onSubmit={this.props.addJob}>
               <input
                 type="text"
-                id="name"
+                id="companyName"
                 className={inputCSS}
+                onChange={this.props.handleInputChange}
+                value={this.props.companyName}
                 placeholder="company name"
+                context="job"
               />
               <input
                 type="email"
-                id="email"
+                id="positionTitle"
                 className={inputCSS}
+                onChange={this.props.handleInputChange}
+                value={this.props.positionTitle}
                 placeholder="position title"
+                context="job"
               />
               <input
                 type="number"
-                id="email"
+                id="mainTasks"
+                onChange={this.props.handleInputChange}
+                value={this.props.mainTasks}
                 className={inputCSS}
                 placeholder="main tasks"
+                context="job"
               />
               <input
                 type="number"
-                id="email"
+                id="startDate"
+                value={this.props.startDate}
+                onChange={this.props.handleInputChange}
                 className={inputCSS}
                 placeholder="start date"
+                context="job"
               />
               <input
                 type="number"
-                id="email"
+                id="endDate"
+                value={this.props.endDate}
+                onChange={this.props.handleInputChange}
                 className={inputCSS}
                 placeholder="end date"
+                context="job"
               />
-              <Button title="Remove Education" onClick={this.toggleShow} />
+              <div className="flex flex-row justify-between">
+                <Button
+                  title="Remove Experience"
+                  onClick={this.toggleShow}
+                  type="secondary"
+                />
+                <button
+                  type="submit"
+                  className="flex flex-col items-center justify-center self-center  bg-purple-500 text-stone-100 cursor-pointer rounded-lg w-max mt-5 px-5 py-1 text-sm font-robmedium"
+                >
+                  Add Experience
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -77,7 +109,7 @@ export class Experience extends Component {
               Job Experience
               <FaBriefcase className="ml-auto opacity-75" />
             </h1>
-            <Button title="Add Education" onClick={this.toggleShow} />
+            <Button title="Add Experience" onClick={this.toggleShow} />
           </div>
         </div>
       );
