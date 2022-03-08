@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CurriculumGenerator/static/css/main.38d9d576.css",
-    "main.js": "/CurriculumGenerator/static/js/main.5cf61e1f.js",
+    "main.css": "/CurriculumGenerator/static/css/main.d4fcb8d3.css",
+    "main.js": "/CurriculumGenerator/static/js/main.1c81ea0e.js",
     "static/media/Roboto-LightItalic.ttf": "/CurriculumGenerator/static/media/Roboto-LightItalic.43cbee784f9194c54b2c.ttf",
     "static/media/Roboto-Italic.ttf": "/CurriculumGenerator/static/media/Roboto-Italic.beb7fe13e61b9e683c37.ttf",
     "static/media/Roboto-Medium.ttf": "/CurriculumGenerator/static/media/Roboto-Medium.7429a63c09f79a1760b0.ttf",
@@ -9,11 +9,11 @@
     "static/media/Roboto-Bold.ttf": "/CurriculumGenerator/static/media/Roboto-Bold.75371f53f06181df75f1.ttf",
     "static/media/Roboto-Light.ttf": "/CurriculumGenerator/static/media/Roboto-Light.8be2d1487420548b3b8d.ttf",
     "index.html": "/CurriculumGenerator/index.html",
-    "main.38d9d576.css.map": "/CurriculumGenerator/static/css/main.38d9d576.css.map",
-    "main.5cf61e1f.js.map": "/CurriculumGenerator/static/js/main.5cf61e1f.js.map"
+    "main.d4fcb8d3.css.map": "/CurriculumGenerator/static/css/main.d4fcb8d3.css.map",
+    "main.1c81ea0e.js.map": "/CurriculumGenerator/static/js/main.1c81ea0e.js.map"
   },
   "entrypoints": [
-    "static/css/main.38d9d576.css",
-    "static/js/main.5cf61e1f.js"
+    "static/css/main.d4fcb8d3.css",
+    "static/js/main.1c81ea0e.js"
   ]
 }
