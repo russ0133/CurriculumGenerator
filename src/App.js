@@ -16,9 +16,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      fullName: "",
-      email: "",
-      phone: "",
+      personalInfo: {
+        fullName: "",
+        email: "",
+        phone: "",
+      },
 
       education: {
         schoolName: "",
@@ -114,19 +116,10 @@ class App extends Component {
     });
   };
   render() {
-    const {
-      email,
-      fullName,
-      phone,
-      schoolName,
-      schoolTitle,
-      schoolDate,
-      companyName,
-      positionTitle,
-      mainTasks,
-      startDate,
-      endDate,
-    } = this.state;
+    const { schoolName, schoolTitle, schoolDate } = this.state.education;
+    const { email, fullName, phone } = this.state.personalInfo;
+    const { companyName, positionTitle, mainTasks, startDate, endDate } =
+      this.state.job;
     return (
       <div className="bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 text-stone-600">
         <Header className="" />
@@ -165,7 +158,7 @@ class App extends Component {
             YOUR GENERATED CV
           </div>
           <GeneratedCV
-            name={fullName}
+            fullName={fullName}
             email={email}
             phone={phone}
             schoolName={schoolName}

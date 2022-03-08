@@ -49,7 +49,7 @@ export class Education extends Component {
                 context="education"
               />
               <input
-                type="email"
+                type="text"
                 id="schoolTitle"
                 className={inputCSS}
                 placeholder="title of study"
@@ -58,7 +58,7 @@ export class Education extends Component {
                 context="education"
               />
               <input
-                type="number"
+                type="date"
                 id="schoolDate"
                 className={inputCSS}
                 placeholder="date of study"

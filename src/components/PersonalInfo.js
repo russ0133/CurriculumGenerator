@@ -23,6 +23,7 @@ export class PersonalInfo extends Component {
               className={inputCSS}
               placeholder="full name"
               value={this.props.fullName}
+              context="personalInfo"
               onChange={this.props.handleInputChange}
             />
             <input

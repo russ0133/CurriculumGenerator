@@ -49,7 +49,7 @@ export class Experience extends Component {
                 context="job"
               />
               <input
-                type="email"
+                type="text"
                 id="positionTitle"
                 className={inputCSS}
                 onChange={this.props.handleInputChange}
@@ -58,7 +58,7 @@ export class Experience extends Component {
                 context="job"
               />
               <input
-                type="number"
+                type="text"
                 id="mainTasks"
                 onChange={this.props.handleInputChange}
                 value={this.props.mainTasks}
@@ -67,7 +67,7 @@ export class Experience extends Component {
                 context="job"
               />
               <input
-                type="number"
+                type="date"
                 id="startDate"
                 value={this.props.startDate}
                 onChange={this.props.handleInputChange}
@@ -76,7 +76,7 @@ export class Experience extends Component {
                 context="job"
               />
               <input
-                type="number"
+                type="date"
                 id="endDate"
                 value={this.props.endDate}
                 onChange={this.props.handleInputChange}
