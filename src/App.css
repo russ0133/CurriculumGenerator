@@ -12,6 +12,25 @@
   src: url("./fonts/Roboto-Black.ttf");
 }
 
+@font-face {
+  font-family: "Custom-3";
+  src: url("./fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Custom-4";
+  src: url("./fonts/Roboto-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Custom-5";
+  src: url("./fonts/Roboto-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Custom-6";
+  src: url("./fonts/Roboto-Medium.ttf");
+}
 input:focus {
   outline: none !important;
 }
