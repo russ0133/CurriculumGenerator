@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import EducationList from "./EducationList";
+import ExperienceList from "./ExperienceList";
 
 export class GeneratedCV extends Component {
   constructor(props) {
@@ -24,7 +26,12 @@ export class GeneratedCV extends Component {
             </div>
           </div>
         </div>
-
+        <ExperienceList jobs={this.props.jobs} deleteJob="" type="generated" />
+        <EducationList
+          educations={this.props.educations}
+          deleteJob=""
+          type="generated"
+        />
         <div>School Name: {this.props.schoolName}</div>
         <div>Education Title: {this.props.schoolTitle}</div>
         <div>Education Date: {this.props.schoolDate}</div>

@@ -164,6 +164,8 @@ class App extends Component {
             schoolName={schoolName}
             schoolTitle={schoolTitle}
             schoolDate={schoolDate}
+            jobs={this.state.jobs}
+            educations={this.state.educations}
           />
         </div>
       </div>
