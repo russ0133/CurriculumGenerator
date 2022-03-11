@@ -8,16 +8,13 @@ import PersonalInfo from "./components/PersonalInfo";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import GeneratedCV from "./components/GeneratedCV";
-import LifecycleTutorial from "./components/LifecycleTutorial";
-
-// TODO: Implement proper education list.
+import IndexLearning from "./components/learning/IndexLearning";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      mount: true,
       personalInfo: {
         fullName: "",
         email: "",
@@ -44,8 +41,6 @@ class App extends Component {
     };
   }
 
-  mountCounter = () => this.setState({ mount: true });
-  unmountCounter = () => this.setState({ mount: false });
   // Job Component Functions
   addToJob = (e) => {
     e.preventDefault();
@@ -116,7 +111,7 @@ class App extends Component {
       this.state.job;
     return (
       <div className="bg-gradient-to-r from-stone-50 via-stone-200 to-stone-50 text-stone-600">
-        <LifecycleTutorial />
+        {/* <IndexLearning /> */}
         <Header className="" />
 
         <div className="flex flex-col justify-start items-center mt-6 font-custom1">

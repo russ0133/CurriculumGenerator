@@ -3,9 +3,7 @@ import { BsFillBackspaceFill } from "react-icons/bs";
 import { MdRemoveCircle } from "react-icons/md";
 import { IconContext } from "react-icons";
 
-const ExperienceList = (props) => {
-  const { jobs, deleteJob, type } = props;
-
+function ExperienceList({ jobs, deleteJob, type }) {
   const divStyle = { marginLeft: 15 };
   if (jobs.length > 0) {
     if (type == "generated") {
@@ -17,7 +15,7 @@ const ExperienceList = (props) => {
           <ul className="ArrayMap w-full mb-4 font-roblitalic ">
             {jobs.map((job, index) => {
               return (
-                <div className="mx-4 mt-2">
+                <div className="mx-4 mt-2" key={job.id}>
                   <div className="PositionTitle text-xl font-robmedium">
                     {job.positionTitle}
                   </div>
@@ -45,7 +43,6 @@ const ExperienceList = (props) => {
                 <IconContext.Provider
                   value={{ color: "darkred", className: "global-class-name" }}
                 >
-                  {" "}
                   <MdRemoveCircle
                     onClick={() => {
                       deleteJob(job.id);
@@ -60,6 +57,6 @@ const ExperienceList = (props) => {
         </ul>
       );
   } else return null;
-};
+}
 
 export default ExperienceList;

@@ -3,9 +3,7 @@ import { BsFillBackspaceFill } from "react-icons/bs";
 import { MdRemoveCircle } from "react-icons/md";
 import { IconContext } from "react-icons";
 
-const EducationList = (props) => {
-  const { educations, deleteEducation, type } = props;
-
+function EducationList({ educations, deleteEducation, type }) {
   const divStyle = { marginLeft: 15 };
   if (educations.length > 0) {
     if (type == "generated") {
@@ -17,7 +15,7 @@ const EducationList = (props) => {
           <ul className="ArrayMap w-full mb-4 font-roblitalic ">
             {educations.map((education, index) => {
               return (
-                <div className="mx-4 mt-2">
+                <div className="mx-4 mt-2" key={education.id}>
                   <div className="SchoolTitle text-xl font-robmedium">
                     {education.schoolTitle}
                   </div>
@@ -58,6 +56,6 @@ const EducationList = (props) => {
         </ul>
       );
   } else return null;
-};
+}
 
 export default EducationList;
